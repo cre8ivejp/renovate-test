@@ -68,9 +68,9 @@
     {
       "description": "Test dependencies - group patch and minor updates",
       "groupName": "test-dependencies",
+      "groupSlug": "test-deps",
       "commitMessagePrefix": "test(deps):",
-      "commitMessageTopic": "the {{groupName}} group",
-      "commitMessageExtra": "",
+      "commitMessageTopic": "test-dependencies",
       "matchPackagePatterns": ["^vitest", "^@vitest/"],
       "matchPackageNames": ["webdriverio", "happy-dom", "msw", "@types/jsdom"],
       "matchUpdateTypes": ["patch", "minor"],
@@ -79,8 +79,8 @@
     {
       "description": "Build dependencies - group patch updates (auto-mergeable)",
       "groupName": "build-patch",
-      "commitMessageTopic": "the {{groupName}} group",
-      "commitMessageExtra": "",
+      "groupSlug": "build-patch",
+      "commitMessageTopic": "build-patch dependencies",
       "matchDepTypes": ["devDependencies"],
       "excludePackagePatterns": ["^vitest", "^@vitest/"],
       "excludePackageNames": ["webdriverio", "happy-dom", "msw", "@types/jsdom"],
@@ -90,8 +90,8 @@
     {
       "description": "Build dependencies - group minor updates (requires review)",
       "groupName": "build-minor",
-      "commitMessageTopic": "the {{groupName}} group",
-      "commitMessageExtra": "",
+      "groupSlug": "build-minor",
+      "commitMessageTopic": "build-minor dependencies",
       "matchDepTypes": ["devDependencies"],
       "excludePackagePatterns": ["^vitest", "^@vitest/"],
       "excludePackageNames": ["webdriverio", "happy-dom", "msw", "@types/jsdom"],
@@ -101,8 +101,8 @@
     {
       "description": "Build dependencies - group major updates",
       "groupName": "build-major",
-      "commitMessageTopic": "the {{groupName}} group",
-      "commitMessageExtra": "",
+      "groupSlug": "build-major",
+      "commitMessageTopic": "build-major dependencies",
       "matchDepTypes": ["devDependencies"],
       "excludePackagePatterns": ["^vitest", "^@vitest/"],
       "excludePackageNames": [
