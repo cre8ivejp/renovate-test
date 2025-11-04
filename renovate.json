@@ -4,20 +4,16 @@
   "labels": ["dependencies"],
   "rangeStrategy": "pin",
   "prConcurrentLimit": 5,
-  "automerge": true,
   "platformAutomerge": true,
   "dependencyDashboard": true,
   "dependencyDashboardAutoclose": true,
   "dependencyDashboardApproval": false,
   "prCreation": "immediate",
-  "separateMajorMinor": false,
-  "separateMultipleMajor": false,
-  "separateMinorPatch": false,
   "semanticCommits": "enabled",
   "commitMessagePrefix": "build(deps):",
   "commitMessageAction": "bump",
   "major": {
-    "commitMessageExtra": ""
+    "automerge": false
   },
   "packageRules": [
     {
@@ -123,7 +119,7 @@
       "automerge": true
     },
     {
-      "description": "Build dependencies - group major updates",
+      "description": "Build dependencies - group major updates (REQUIRES REVIEW)",
       "groupName": "build-major",
       "groupSlug": "build-major",
       "prTitle": "build(deps): bump build-major group",
@@ -143,7 +139,9 @@
         "unbuild"
       ],
       "matchUpdateTypes": ["major"],
-      "automerge": false
+      "automerge": false,
+      "platformAutomerge": false,
+      "requiredStatusChecks": null
     }
   ]
 }
