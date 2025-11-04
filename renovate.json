@@ -1,7 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
+  "extends": ["config:base"],
   "labels": ["dependencies"],
+  "rangeStrategy": "pin",
   "prConcurrentLimit": 5,
   "automerge": true,
   "platformAutomerge": true,
@@ -11,6 +12,7 @@
   "prCreation": "immediate",
   "semanticCommits": "enabled",
   "commitMessagePrefix": "build(deps):",
+  "commitMessageAction": "bump",
   "packageRules": [
     {
       "description": "Automerge patch and minor updates",
