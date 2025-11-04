@@ -4,6 +4,7 @@
   "labels": ["dependencies"],
   "platformAutomerge": true,
   "semanticCommits": "enabled",
+  "semanticPRTitle": "enabled",
   "commitMessagePrefix": "build(deps):",
   "commitMessageAction": "bump",
   "commitMessageSuffix": "",
@@ -142,4 +143,3 @@
     }
   ]
 }
-
