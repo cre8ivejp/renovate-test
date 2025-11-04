@@ -18,6 +18,23 @@
   "commitMessageAction": "bump",
   "packageRules": [
     {
+      "description": "GitHub Actions - ignore major updates",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "description": "GitHub Actions - group patch and minor updates",
+      "groupName": "ci-dependencies",
+      "groupSlug": "ci-deps",
+      "commitMessagePrefix": "ci(deps):",
+      "commitMessageTopic": "ci-dependencies group",
+      "commitMessageExtra": "",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "automerge": true
+    },
+    {
       "description": "Automerge patch and minor updates",
       "matchUpdateTypes": ["patch", "minor"],
       "automerge": true

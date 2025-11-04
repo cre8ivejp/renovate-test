@@ -18,6 +18,16 @@ Renovate should create:
 - A Dependency Dashboard issue listing all available updates
 - Grouped PRs for updates based on the configuration
 
+## GitHub Actions Testing
+
+Workflows with intentionally old action versions:
+- `actions/checkout@v3` (current: v4)
+- `actions/setup-node@v3` (current: v4)
+- `pnpm/action-setup@v3.0.0` (current: v4.x)
+- `googleapis/release-please-action@v3` (current: v4.x)
+
+**Expected:** One grouped PR: `ci(deps): bump ci-dependencies group`
+
 ## Expected Behavior
 
 ### Blocked Updates (should NOT create PRs):
@@ -28,10 +38,17 @@ Renovate should create:
 - **async-mutex**: 0.4.0 → 0.5.x (minor/major blocked, only patch allowed)
 - **unbuild**: 2.0.0 → 3.x (minor/major blocked, only patch allowed)
 - **Test deps major updates**: vitest 2.x → 3.x (major blocked)
+- **GitHub Actions major updates**: actions/checkout v3 → v4 (major blocked)
 
 ### Grouped PRs Expected:
 
-1. **test-dependencies group** (patch + minor)
+1. **ci-dependencies group** (GitHub Actions patch + minor)
+   - actions/checkout: v3 → v4 (minor)
+   - actions/setup-node: v3 → v4 (minor)
+   - pnpm/action-setup: v3.0.0 → v4.x (major blocked, will only do patch/minor within v3)
+   - googleapis/release-please-action: v3 → v4 (major blocked, will only do patch/minor within v3)
+
+2. **test-dependencies group** (patch + minor)
    - vitest: 2.0.0 → 2.x.x (patch updates within 2.x)
    - @vitest/browser: 2.0.0 → 2.x.x
    - @vitest/utils: 2.0.0 → 2.x.x
@@ -40,7 +57,7 @@ Renovate should create:
    - msw: 2.0.0 → 2.x.x (patch/minor within 2.x)
    - @types/jsdom: 21.0.0 → 27.x (minor)
 
-2. **build-minor group** (minor updates for build deps)
+3. **build-minor group** (minor updates for build deps)
    - @typescript-eslint/eslint-plugin: 7.0.0 → 8.x
    - @typescript-eslint/parser: 7.0.0 → 8.x
    - typescript-eslint: 7.0.0 → 8.x
@@ -49,7 +66,7 @@ Renovate should create:
    - eslint-plugin-import: 2.29.0 → 2.32.x
    - jiti: 1.21.0 → 2.x
 
-3. **build-patch group** (patch updates for build deps)
+4. **build-patch group** (patch updates for build deps)
    - Any patch-level updates for packages not in other groups
 
 ## Testing checklist
