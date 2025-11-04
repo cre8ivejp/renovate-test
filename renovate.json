@@ -2,25 +2,15 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
   "labels": ["dependencies"],
-  "rangeStrategy": "pin",
-  "prConcurrentLimit": 5,
   "platformAutomerge": true,
-  "dependencyDashboard": true,
-  "dependencyDashboardAutoclose": true,
-  "dependencyDashboardApproval": false,
-  "prCreation": "immediate",
   "semanticCommits": "enabled",
   "commitMessagePrefix": "build(deps):",
   "commitMessageAction": "bump",
   "major": {
-    "automerge": false
+    "automerge": false,
+    "commitMessageExtra": ""
   },
   "packageRules": [
-    {
-      "description": "Node.js - group with build dependencies by update type",
-      "matchDatasources": ["node-version"],
-      "rangeStrategy": "pin"
-    },
     {
       "description": "GitHub Actions - ignore major updates",
       "matchManagers": ["github-actions"],
@@ -34,11 +24,6 @@
       "prTitle": "ci(deps): bump ci-dependencies group",
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["patch", "minor", "digest"],
-      "automerge": true
-    },
-    {
-      "description": "Automerge patch and minor updates",
-      "matchUpdateTypes": ["patch", "minor"],
       "automerge": true
     },
     {
@@ -139,9 +124,7 @@
         "unbuild"
       ],
       "matchUpdateTypes": ["major"],
-      "automerge": false,
-      "platformAutomerge": false,
-      "requiredStatusChecks": null
+      "automerge": false
     }
   ]
 }
