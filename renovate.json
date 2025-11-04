@@ -10,12 +10,15 @@
   "dependencyDashboardAutoclose": true,
   "dependencyDashboardApproval": false,
   "prCreation": "immediate",
-  "separateMajorMinor": true,
+  "separateMajorMinor": false,
   "separateMultipleMajor": false,
   "separateMinorPatch": false,
   "semanticCommits": "enabled",
   "commitMessagePrefix": "build(deps):",
   "commitMessageAction": "bump",
+  "major": {
+    "commitMessageExtra": ""
+  },
   "packageRules": [
     {
       "description": "Node.js - group with build dependencies by update type",
