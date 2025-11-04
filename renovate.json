@@ -24,14 +24,14 @@
       "enabled": false
     },
     {
-      "description": "GitHub Actions - group patch and minor updates",
+      "description": "GitHub Actions - group patch, minor, and digest updates",
       "groupName": "ci-dependencies",
       "groupSlug": "ci-deps",
       "commitMessagePrefix": "ci(deps):",
       "commitMessageTopic": "ci-dependencies group",
       "commitMessageExtra": "",
       "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["patch", "minor"],
+      "matchUpdateTypes": ["patch", "minor", "digest"],
       "automerge": true
     },
     {
@@ -100,6 +100,7 @@
       "groupSlug": "build-patch",
       "commitMessageTopic": "build-patch group",
       "commitMessageExtra": "",
+      "matchDatasources": ["npm", "node-version"],
       "matchDepTypes": ["devDependencies", "packageManager"],
       "excludePackagePatterns": ["^vitest", "^@vitest/"],
       "excludePackageNames": ["webdriverio", "happy-dom", "msw", "@types/jsdom"],
@@ -112,6 +113,7 @@
       "groupSlug": "build-minor",
       "commitMessageTopic": "build-minor group",
       "commitMessageExtra": "",
+      "matchDatasources": ["npm", "node-version"],
       "matchDepTypes": ["devDependencies", "packageManager"],
       "excludePackagePatterns": ["^vitest", "^@vitest/"],
       "excludePackageNames": ["webdriverio", "happy-dom", "msw", "@types/jsdom"],
@@ -124,6 +126,7 @@
       "groupSlug": "build-major",
       "commitMessageTopic": "build-major group",
       "commitMessageExtra": "",
+      "matchDatasources": ["npm", "node-version"],
       "matchDepTypes": ["devDependencies", "packageManager"],
       "excludePackagePatterns": ["^vitest", "^@vitest/"],
       "excludePackageNames": [
