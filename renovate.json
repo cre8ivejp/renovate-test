@@ -2,6 +2,8 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
   "labels": ["dependencies"],
+  "timezone": "Asia/Tokyo",
+  "schedule": ["0 10 1 * *"],
   "platformAutomerge": true,
   "semanticCommits": "enabled",
   "commitMessagePrefix": "build(deps):",
