@@ -8,6 +8,7 @@
   "dependencyDashboard": true,
   "dependencyDashboardAutoclose": true,
   "dependencyDashboardApproval": false,
+  "prCreation": "immediate",
   "semanticCommits": "enabled",
   "commitMessagePrefix": "build(deps):",
   "commitMessageAction": "bump",
