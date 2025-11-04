@@ -18,6 +18,11 @@
   "commitMessageAction": "bump",
   "packageRules": [
     {
+      "description": "Node.js - group with build dependencies by update type",
+      "matchDatasources": ["node-version"],
+      "rangeStrategy": "pin"
+    },
+    {
       "description": "GitHub Actions - ignore major updates",
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["major"],
