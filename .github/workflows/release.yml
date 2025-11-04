@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
 
       - name: Release Please
-        uses: googleapis/release-please-action@7987652d64b4581673a76e33ad5e98e3dd56832f # v3.7.13
+        uses: googleapis/release-please-action@db8f2c60ee802b3748b512940dde88eabd7b7e01 # v3.7.13
 
