@@ -5,6 +5,13 @@
   "prConcurrentLimit": 5,
   "automerge": true,
   "platformAutomerge": true,
+  "dependencyDashboard": true,
+  "dependencyDashboardAutoclose": true,
+  "dependencyDashboardApproval": false,
+  "semanticCommits": "enabled",
+  "commitMessagePrefix": "build(deps):",
+  "commitMessageAction": "bump",
+  "commitMessageTopic": "{{depName}}",
   "packageRules": [
     {
       "description": "Automerge patch and minor updates",
@@ -57,6 +64,7 @@
     {
       "description": "Test dependencies - group patch and minor updates",
       "groupName": "test-dependencies",
+      "commitMessagePrefix": "test(deps):",
       "matchPackagePatterns": ["^vitest", "^@vitest/"],
       "matchPackageNames": ["webdriverio", "happy-dom", "msw", "@types/jsdom"],
       "matchUpdateTypes": ["patch", "minor"],
