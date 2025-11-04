@@ -11,8 +11,6 @@
   "prCreation": "immediate",
   "semanticCommits": "enabled",
   "commitMessagePrefix": "build(deps):",
-  "commitMessageAction": "bump",
-  "commitMessageTopic": "{{depName}}",
   "packageRules": [
     {
       "description": "Automerge patch and minor updates",
@@ -66,6 +64,7 @@
       "description": "Test dependencies - group patch and minor updates",
       "groupName": "test-dependencies",
       "commitMessagePrefix": "test(deps):",
+      "commitMessageTopic": "the {{groupName}} group",
       "matchPackagePatterns": ["^vitest", "^@vitest/"],
       "matchPackageNames": ["webdriverio", "happy-dom", "msw", "@types/jsdom"],
       "matchUpdateTypes": ["patch", "minor"],
@@ -74,6 +73,7 @@
     {
       "description": "Build dependencies - group patch updates (auto-mergeable)",
       "groupName": "build-patch",
+      "commitMessageTopic": "the {{groupName}} group",
       "matchDepTypes": ["devDependencies"],
       "excludePackagePatterns": ["^vitest", "^@vitest/"],
       "excludePackageNames": ["webdriverio", "happy-dom", "msw", "@types/jsdom"],
@@ -83,6 +83,7 @@
     {
       "description": "Build dependencies - group minor updates (requires review)",
       "groupName": "build-minor",
+      "commitMessageTopic": "the {{groupName}} group",
       "matchDepTypes": ["devDependencies"],
       "excludePackagePatterns": ["^vitest", "^@vitest/"],
       "excludePackageNames": ["webdriverio", "happy-dom", "msw", "@types/jsdom"],
@@ -92,6 +93,7 @@
     {
       "description": "Build dependencies - group major updates",
       "groupName": "build-major",
+      "commitMessageTopic": "the {{groupName}} group",
       "matchDepTypes": ["devDependencies"],
       "excludePackagePatterns": ["^vitest", "^@vitest/"],
       "excludePackageNames": [
