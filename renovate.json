@@ -6,9 +6,11 @@
   "semanticCommits": "enabled",
   "commitMessagePrefix": "build(deps):",
   "commitMessageAction": "bump",
+  "commitMessageSuffix": "",
   "major": {
     "automerge": false,
-    "commitMessageExtra": ""
+    "commitMessageExtra": "",
+    "commitMessageSuffix": ""
   },
   "packageRules": [
     {
@@ -23,6 +25,8 @@
       "groupSlug": "ci-deps",
       "commitMessagePrefix": "ci(deps):",
       "commitMessageTopic": "ci-dependencies group",
+      "commitMessageExtra": "",
+      "commitMessageSuffix": "",
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["patch", "minor", "digest"],
       "automerge": true
@@ -76,6 +80,8 @@
       "groupSlug": "test-deps",
       "commitMessagePrefix": "test(deps):",
       "commitMessageTopic": "test-dependencies group",
+      "commitMessageExtra": "",
+      "commitMessageSuffix": "",
       "matchPackagePatterns": ["^vitest", "^@vitest/"],
       "matchPackageNames": ["webdriverio", "happy-dom", "msw", "@types/jsdom"],
       "matchUpdateTypes": ["patch", "minor"],
@@ -86,6 +92,8 @@
       "groupName": "build-patch",
       "groupSlug": "build-patch",
       "commitMessageTopic": "build-patch group",
+      "commitMessageExtra": "",
+      "commitMessageSuffix": "",
       "matchDatasources": ["npm", "node-version"],
       "matchDepTypes": ["devDependencies", "packageManager"],
       "excludePackagePatterns": ["^vitest", "^@vitest/"],
@@ -98,6 +106,8 @@
       "groupName": "build-minor",
       "groupSlug": "build-minor",
       "commitMessageTopic": "build-minor group",
+      "commitMessageExtra": "",
+      "commitMessageSuffix": "",
       "matchDatasources": ["npm", "node-version"],
       "matchDepTypes": ["devDependencies", "packageManager"],
       "excludePackagePatterns": ["^vitest", "^@vitest/"],
@@ -110,6 +120,8 @@
       "groupName": "build-major",
       "groupSlug": "build-major",
       "commitMessageTopic": "build-major group",
+      "commitMessageExtra": "",
+      "commitMessageSuffix": "",
       "matchDatasources": ["npm", "node-version"],
       "matchDepTypes": ["devDependencies", "packageManager"],
       "excludePackagePatterns": ["^vitest", "^@vitest/"],
